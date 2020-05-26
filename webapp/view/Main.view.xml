@@ -24,7 +24,6 @@
 		                        <viz.data:measures>
 		                            <viz.data:MeasureDefinition name="Revenue"
 		                                value="{chartModel>Value}" />
-		                            
 		                        </viz.data:measures>
 		                    </viz.data:FlattenedDataset>
 		                </viz:dataset>
@@ -81,7 +80,7 @@
 		                        </viz.data:measures>
 		                    </viz.data:FlattenedDataset>
 		                </viz:dataset>
-		
+		                
 		                <viz:feeds>
 		                    <viz.feeds:FeedItem id='valueAxisFeed3' uid="size" type="Measure"
 		                        values="Value" />
@@ -110,9 +109,8 @@
 		                        </viz.data:measures>
 		                    </viz.data:FlattenedDataset>
 		                </viz:dataset>
-		
+		                
 		                <viz:feeds>
-		              
 		                    <viz.feeds:FeedItem uid="valueAxis" type="Measure"
 		                        values="Revenue" />
 		                    <viz.feeds:FeedItem uid="valueAxis2" type="Measure"
