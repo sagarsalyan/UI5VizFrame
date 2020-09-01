@@ -1,0 +1,62 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:viz="sap.viz.ui5.controls" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz.data="sap.viz.ui5.data" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="Application.VizFrame.controller.SaveChart"
+	xmlns:l="sap.ui.layout" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Title">
+				<content>
+					<l:VerticalLayout id="containerLayout" width="100%">
+						<l:BlockLayout id="BlockLayout" background="{/selectedBackground}">
+							<l:BlockLayoutRow accentCells="Accent1">
+								<l:BlockLayoutCell id="Accent1" width="2" title="BarChart">
+									<!--Bar-View-->
+									<viz:Popover id="idPopOverr"></viz:Popover>
+									<viz:VizFrame id="idVizFrame22" width="100%" vizType='bar' title="Bar1">
+										<viz:dataset>
+											<viz.data:FlattenedDataset data="{chartModel>/Cars}">
+												<viz.data:dimensions>
+													<viz.data:DimensionDefinition name="Store Name" value="{chartModel>Brand}"/>
+												</viz.data:dimensions>
+												<viz.data:measures>
+													<viz.data:MeasureDefinition name="Revenue" value="{chartModel>Value}"/>
+												</viz.data:measures>
+											</viz.data:FlattenedDataset>
+										</viz:dataset>
+										<viz:feeds>
+											<viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure" values="Revenue"/>
+											<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Store Name"/>
+										</viz:feeds>
+									</viz:VizFrame>
+									<Button text="Save"/>
+									<!--Bar-View-->
+								</l:BlockLayoutCell>
+								<l:BlockLayoutCell id="Accent2" width="2" title="DonutChart">
+									<!--Donut-->
+									<viz:VizFrame id="idVizFrame33" width="100%" vizType='donut'>
+										<viz:dataset>
+											<viz.data:FlattenedDataset data="{chartModel>/Cars}">
+												<viz.data:dimensions>
+													<viz.data:DimensionDefinition name="Brand" value="{chartModel>Brand}"/>
+												</viz.data:dimensions>
+												<viz.data:measures>
+													<viz.data:MeasureDefinition name="Value" value="{chartModel>Value}"/>
+												</viz.data:measures>
+											</viz.data:FlattenedDataset>
+										</viz:dataset>
+										<viz:feeds>
+											<viz.feeds:FeedItem id='valueAxisFeed2' uid="size" type="Measure" values="Value"/>
+											<viz.feeds:FeedItem uid="color" type="Dimension" values="Brand"/>
+										</viz:feeds>
+									</viz:VizFrame>
+									<Button text="Save"/>
+									<!--Donut-->
+								</l:BlockLayoutCell>
+							</l:BlockLayoutRow>
+						</l:BlockLayout>
+					</l:VerticalLayout>
+					
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

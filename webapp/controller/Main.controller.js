@@ -101,6 +101,10 @@ sap.ui.define([
 			
 			
 		},
+		onSecondPress:function(){
+			var route = new sap.ui.core.UIComponent.getRouterFor(this);
+			route.navTo("SaveChart", true);
+		}
 
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered

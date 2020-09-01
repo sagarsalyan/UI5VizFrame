@@ -1,5 +1,5 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:viz="sap.viz.ui5.controls" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
-    xmlns:viz.data="sap.viz.ui5.data" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="Application.VizFrame.controller.Main"
+	xmlns:viz.data="sap.viz.ui5.data" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="Application.VizFrame.controller.Main"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>
@@ -7,121 +7,89 @@
 				<content>
 					<Label text="Test"/>
 					<!--Bar-Controller-->
-					<viz:VizFrame id="idVizFrame" width="100%" />
-
-		            <!--Bar-Controller-->
-		             
-		             <!--Bar-View-->
-		             <viz:Popover id="idPopOver"></viz:Popover>
-		             <viz:VizFrame id="idVizFrame2" 
-		                height='100%' width="100%" vizType='bar' title="Bar1">
-		                <viz:dataset>
-		                    <viz.data:FlattenedDataset data="{chartModel>/Cars}">
-		                        <viz.data:dimensions>
-		                            <viz.data:DimensionDefinition name="Store Name"
-		                                value="{chartModel>Brand}" />
-		                        </viz.data:dimensions>
-		                        <viz.data:measures>
-		                            <viz.data:MeasureDefinition name="Revenue"
-		                                value="{chartModel>Value}" />
-		                        </viz.data:measures>
-		                    </viz.data:FlattenedDataset>
-		                </viz:dataset>
-		
-		                <viz:feeds>
-		                    <viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure"
-		                        values="Revenue" />
-		                    <viz.feeds:FeedItem uid="categoryAxis" type="Dimension"
-		                        values="Store Name" />
-		                </viz:feeds>
-		            </viz:VizFrame> 
-		            <!--Bar-View-->
-		            
-		            <!--Donut-->
-		            <viz:VizFrame id="idVizFrame3" 
-		                height='100%' width="100%" vizType='donut'>
-		                <viz:dataset>
-		                    <viz.data:FlattenedDataset data="{chartModel>/Cars}">
-		                        <viz.data:dimensions>
-		                            <viz.data:DimensionDefinition name="Brand"
-		                                value="{chartModel>Brand}" />
-		                        </viz.data:dimensions>
-		                        <viz.data:measures>
-		                            <viz.data:MeasureDefinition name="Value"
-		                                value="{chartModel>Value}" />
-		                            
-		                        </viz.data:measures>
-		                    </viz.data:FlattenedDataset>
-		                </viz:dataset>
-		
-		                <viz:feeds>
-		                    <viz.feeds:FeedItem id='valueAxisFeed2' uid="size" type="Measure"
-		                        values="Value" />
-		                    <viz.feeds:FeedItem uid="color" type="Dimension"
-		                        values="Brand" />
-		                </viz:feeds>
-		            </viz:VizFrame> 
-		            
-		            <!--Donut-->
-		            
-		            <!--Pie-->
-		            <viz:VizFrame id="idVizFrame4" 
-		                height='100%' width="100%" vizType='pie'>
-		                <viz:dataset>
-		                    <viz.data:FlattenedDataset data="{chartModel>/Cars}">
-		                        <viz.data:dimensions>
-		                            <viz.data:DimensionDefinition name="Brand"
-		                                value="{chartModel>Brand}" />
-		                        </viz.data:dimensions>
-		                        <viz.data:measures>
-		                            <viz.data:MeasureDefinition name="Value"
-		                                value="{chartModel>Value}" />
-		                            
-		                        </viz.data:measures>
-		                    </viz.data:FlattenedDataset>
-		                </viz:dataset>
-		                
-		                <viz:feeds>
-		                    <viz.feeds:FeedItem id='valueAxisFeed3' uid="size" type="Measure"
-		                        values="Value" />
-		                    <viz.feeds:FeedItem uid="color" type="Dimension"
-		                        values="Brand" />
-		                </viz:feeds>
-		            </viz:VizFrame> 
-		            
-		            <!--Pie-->
-		            
-		            <!--Scatter-->
-		            <viz:VizFrame id="idVizFrame5" 
-		                height='100%' width="100%" vizType='scatter' >
-		                <viz:dataset>
-		                    <viz.data:FlattenedDataset data="{chartModel>/Milk}">
-		                        <viz.data:dimensions>
-		                            <viz.data:DimensionDefinition name="StoreName"
-		                                value="{chartModel>StoreName}" />
-		                        </viz.data:dimensions>
-		                        <viz.data:measures>
-		                            <viz.data:MeasureDefinition name="Revenue"
-		                                value="{chartModel>Revenue}" />
-		                            <viz.data:MeasureDefinition name="Cost"
-		                                value="{chartModel>Cost}" />
-		                            
-		                        </viz.data:measures>
-		                    </viz.data:FlattenedDataset>
-		                </viz:dataset>
-		                
-		                <viz:feeds>
-		                    <viz.feeds:FeedItem uid="valueAxis" type="Measure"
-		                        values="Revenue" />
-		                    <viz.feeds:FeedItem uid="valueAxis2" type="Measure"
-		                        values="Cost" />
-		                </viz:feeds>
-		            </viz:VizFrame> 
-		            
-		            <!--Scatter-->
-		            
-		            
+					<viz:VizFrame id="idVizFrame" width="100%"/>
+					<!--Bar-Controller-->
+					<!--Bar-View-->
+					<viz:Popover id="idPopOver"></viz:Popover>
+					<viz:VizFrame id="idVizFrame2" height='100%' width="100%" vizType='bar' title="Bar1">
+						<viz:dataset>
+							<viz.data:FlattenedDataset data="{chartModel>/Cars}">
+								<viz.data:dimensions>
+									<viz.data:DimensionDefinition name="Store Name" value="{chartModel>Brand}"/>
+								</viz.data:dimensions>
+								<viz.data:measures>
+									<viz.data:MeasureDefinition name="Revenue" value="{chartModel>Value}"/>
+								</viz.data:measures>
+							</viz.data:FlattenedDataset>
+						</viz:dataset>
+						<viz:feeds>
+							<viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure" values="Revenue"/>
+							<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Store Name"/>
+						</viz:feeds>
+					</viz:VizFrame>
+					<!--Bar-View-->
+					<!--Donut-->
+					<viz:VizFrame id="idVizFrame3" height='100%' width="100%" vizType='donut'>
+						<viz:dataset>
+							<viz.data:FlattenedDataset data="{chartModel>/Cars}">
+								<viz.data:dimensions>
+									<viz.data:DimensionDefinition name="Brand" value="{chartModel>Brand}"/>
+								</viz.data:dimensions>
+								<viz.data:measures>
+									<viz.data:MeasureDefinition name="Value" value="{chartModel>Value}"/>
+								</viz.data:measures>
+							</viz.data:FlattenedDataset>
+						</viz:dataset>
+						<viz:feeds>
+							<viz.feeds:FeedItem id='valueAxisFeed2' uid="size" type="Measure" values="Value"/>
+							<viz.feeds:FeedItem uid="color" type="Dimension" values="Brand"/>
+						</viz:feeds>
+					</viz:VizFrame>
+					<!--Donut-->
+					<!--Pie-->
+					<viz:VizFrame id="idVizFrame4" height='100%' width="100%" vizType='pie'>
+						<viz:dataset>
+							<viz.data:FlattenedDataset data="{chartModel>/Cars}">
+								<viz.data:dimensions>
+									<viz.data:DimensionDefinition name="Brand" value="{chartModel>Brand}"/>
+								</viz.data:dimensions>
+								<viz.data:measures>
+									<viz.data:MeasureDefinition name="Value" value="{chartModel>Value}"/>
+								</viz.data:measures>
+							</viz.data:FlattenedDataset>
+						</viz:dataset>
+						<viz:feeds>
+							<viz.feeds:FeedItem id='valueAxisFeed3' uid="size" type="Measure" values="Value"/>
+							<viz.feeds:FeedItem uid="color" type="Dimension" values="Brand"/>
+						</viz:feeds>
+					</viz:VizFrame>
+					<!--Pie-->
+					<!--Scatter-->
+					<viz:VizFrame id="idVizFrame5" height='100%' width="100%" vizType='scatter'>
+						<viz:dataset>
+							<viz.data:FlattenedDataset data="{chartModel>/Milk}">
+								<viz.data:dimensions>
+									<viz.data:DimensionDefinition name="StoreName" value="{chartModel>StoreName}"/>
+								</viz.data:dimensions>
+								<viz.data:measures>
+									<viz.data:MeasureDefinition name="Revenue" value="{chartModel>Revenue}"/>
+									<viz.data:MeasureDefinition name="Cost" value="{chartModel>Cost}"/>
+								</viz.data:measures>
+							</viz.data:FlattenedDataset>
+						</viz:dataset>
+						<viz:feeds>
+							<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Revenue"/>
+							<viz.feeds:FeedItem uid="valueAxis2" type="Measure" values="Cost"/>
+						</viz:feeds>
+					</viz:VizFrame>
+					<!--Scatter-->
 				</content>
+				<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						<Button text="Second" press="onSecondPress"/>
+					</OverflowToolbar>
+				</footer>
 			</Page>
 		</pages>
 	</App>

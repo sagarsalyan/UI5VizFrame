@@ -57,9 +57,9 @@
 					"bundleName": "Application.VizFrame.i18n.i18n"
 				}
 			},
-			"chartModel":{
-				"type":"sap.ui.model.json.JSONModel",
-				"uri":"model/ChartData.json"
+			"chartModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/ChartData.json"
 			}
 		},
 		"resources": {
@@ -88,10 +88,17 @@
 					]
 				},
 				{
-					"name":"Main",
+					"name": "Main",
 					"pattern": "",
-					"target":[
+					"target": [
 						"Main"
+					]
+				},
+				{
+					"name": "SaveChart",
+					"pattern": "SaveChart",
+					"target": [
+						"SaveChart"
 					]
 				}
 			],
@@ -106,6 +113,10 @@
 				"Main": {
 					"viewType": "XML",
 					"viewName": "Main"
+				},
+				"SaveChart": {
+					"viewType": "XML",
+					"viewName": "SaveChart"
 				}
 			}
 		}
