@@ -26,6 +26,7 @@ sap.ui.define([
 					path:"chartModel>/Cars"
 				}
 			});
+			oVizFrame.removeAllFeeds();
 			oVizFrame.setDataset(oDataset);
 			oVizFrame.setVizType('bar');
 			var oPopOver = this.getView().byId("idPopOver");
