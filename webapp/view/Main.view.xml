@@ -83,6 +83,66 @@
 						</viz:feeds>
 					</viz:VizFrame>
 					<!--Scatter-->
+					<!--combination-->
+					<viz:VizFrame id="oVizFrame1" busy="false" busyIndicatorDelay="1000" visible="true" uiConfig="{ 'applicationSet': 'fiori' }"
+						vizType="combination" legendVisible="true"
+						vizProperties="{'plotArea': { 'secondaryScale': { 'fixedRange': true, 'minValue': 0, 'maxValue': 30000 } }}">
+						<viz:dataset>
+							<viz.data:FlattenedDataset data="{chartModel>/Book}">
+								<viz.data:dimensions>
+									<viz.data:DimensionDefinition name="Item Category" value="{Item Category}"/>
+								</viz.data:dimensions>
+								<viz.data:measures>
+									<viz.data:MeasureDefinition name="Revenue" value="{chartModel>Revenue}"/>
+									<viz.data:MeasureDefinition name="Units Available" value="{chartModel>Units Available}"/>
+								</viz.data:measures>
+							</viz.data:FlattenedDataset>
+						</viz:dataset>
+						<viz:feeds>
+							<viz.feeds:FeedItem id="value3" uid="valueAxis" type="Measure" values="Revenue,Units Available"/>
+							<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Item Category"/>
+						</viz:feeds>
+					</viz:VizFrame>
+					<!--Combination-->
+					<!--Dual combination-->
+					<viz:VizFrame id="oVizFrame" busy="false" busyIndicatorDelay="1000" visible="true" uiConfig="{ 'applicationSet': 'fiori' }"
+						vizType="dual_combination" legendVisible="true"
+						vizProperties="{'plotArea': { 'secondaryScale': { 'fixedRange': true, 'minValue': 0, 'maxValue': 30000 } }}">
+						<viz:dataset>
+							<viz.data:FlattenedDataset data="{chartModel>/Book}">
+								<viz.data:dimensions>
+									<viz.data:DimensionDefinition name="Item Category" value="{Item Category}"/>
+								</viz.data:dimensions>
+								<viz.data:measures>
+									<viz.data:MeasureDefinition name="Revenue" value="{chartModel>Revenue}"/>
+									<viz.data:MeasureDefinition name="Units Available" value="{chartModel>Units Available}"/>
+								</viz.data:measures>
+							</viz.data:FlattenedDataset>
+						</viz:dataset>
+						<viz:feeds>
+							<viz.feeds:FeedItem id="value1" uid="valueAxis" type="Measure" values="Revenue"/>
+							<viz.feeds:FeedItem id="value2" uid="valueAxis2" type="Measure" values="Units Available"/>
+							<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Item Category"/>
+						</viz:feeds>
+					</viz:VizFrame>
+					<!--DualCombination-->
+					<viz:Popover id="idPopOverCustom" customDataControl="popOverCustomDataControl"></viz:Popover>
+					<viz:VizFrame id="idVizFrameCustom" uiConfig="{applicationSet:'fiori'}" vizType='column' selectData="onSelectDeadlineSLAPercent">
+						<viz:dataset>
+							<viz.data:FlattenedDataset data="{chartModel>/Book}">
+								<viz.data:dimensions>
+									<viz.data:DimensionDefinition name="Item Category" value="{chartModel>Item Category}"/>
+								</viz.data:dimensions>
+								<viz.data:measures>
+									<viz.data:MeasureDefinition name="Cost" value="{chartModel>Cost}"/>
+								</viz.data:measures>
+							</viz.data:FlattenedDataset>
+						</viz:dataset>
+						<viz:feeds>
+							<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Cost"/>
+							<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Item Category"/>
+						</viz:feeds>
+					</viz:VizFrame>
 				</content>
 				<footer>
 					<OverflowToolbar>

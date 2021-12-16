@@ -100,6 +100,105 @@ sap.ui.define([
 			
 			
 			
+			//dual bar
+			this.getView().byId("oVizFrame").setVizProperties({
+				interaction: {
+					selectability: {
+						mode: 'NONE'
+					}
+				},
+				plotArea: {
+					dataPointSize: {
+						min: 40,
+					},
+					dataLabel: {
+						visible: true,
+						type: 'value',
+						style: {
+							fontWeight: 'bold'
+						}
+					},
+					gridline: {
+						visible: false
+					},
+					drawingEffect: 'glossy',
+					// colorPalette: d3.scale.category20().range()
+					colorPalette: ['#009dff', '#ff9900']
+				},
+				title: {
+					visible: true,
+					text: "Books"
+				},
+				categoryAxis: {
+					label: {
+						style: {
+							fontWeight: 'bold'
+						}
+					},
+					title: {
+						style: {
+							fontWeight: 'bold'
+						}
+					}
+				},
+				valueAxis: {
+					label: {
+						style: {
+							fontWeight: 'bold'
+						}
+					},
+					title: {
+						style: {
+							fontWeight: 'bold'
+						}
+					}
+				},
+				valueAxis2: {
+					label: {
+						style: {
+							fontWeight: 'bold'
+						}
+					},
+					title: {
+						style: {
+							fontWeight: 'bold'
+						}
+					}
+				}
+			});
+			//dual bar
+			
+			
+			
+			
+			// Custom data in popover
+			var idPopOverCustom = this.getView().byId("idPopOverCustom");
+			idPopOverCustom.setCustomDataControl(function (data) {
+				debugger
+				var selectedLevel = data.data.val.find(d => d.id === "_context_row_number").value;
+				var selectedData = this.getOwnerComponent().getModel("chartModel").getProperty("/Book")[selectedLevel];
+				var selectedColor = data.data.color;
+				var divStr = "";
+				var svg =
+					`<svg width='10px' height='10px'><path d='M-5,-5L5,-5L5,5L-5,5Z' fill='${selectedColor}' transform='translate(5,5)'></path></svg>`;
+				divStr = divStr + "<div style = 'margin: 15px 30px 0 10px'>" + svg + "<b style='margin-left:10px'>" + selectedData.City +
+					"</b></div>";
+				divStr = divStr + "<div style = 'margin: 5px 30px 0 30px'>Profit<span style = 'float: right'>" + selectedData.Profit +
+					"</span></div>";
+				divStr = divStr + "<div style = 'margin: 5px 30px 0 30px'>Revenue<span style = 'float: right'>" + selectedData.Revenue +
+					"</span></div>";
+				divStr = divStr + "<div style = 'margin: 5px 30px 15px 30px'>Units Sold<span style = 'float: right'>" + selectedData["Units Sold"] +
+					"</span></div>";
+				return new sap.ui.core.HTML({
+					content: divStr
+				});
+			}.bind(this));
+			idPopOverCustom.connect(this.getView().byId("idVizFrameCustom").getVizUid());
+			
+			// Custom data in popover
+			
+			
+			
 			
 		},
 		onSecondPress:function(){
