@@ -36,7 +36,8 @@
 		"Revenue": 469378.12,
 		"Unit Price": 1240.79,
 		"Units Available": 17336,
-		"Units Sold": 57571
+		"Units Sold": 57571,
+		"Category":"Category1"
 	}, {
 		"City": "New York ",
 		"Cost": 115132.04,
@@ -45,7 +46,8 @@
 		"Revenue": 172126.37,
 		"Unit Price": 763.21,
 		"Units Available": 11248,
-		"Units Sold": 37303
+		"Units Sold": 37303,
+		"Category":"Category1"
 	}, {
 		"City": "New York ",
 		"Cost": 171742.42,
@@ -54,7 +56,8 @@
 		"Revenue": 252835.82,
 		"Unit Price": 1143.57,
 		"Units Available": 14917,
-		"Units Sold": 51664
+		"Units Sold": 51664,
+		"Category":"Category2"
 	}, {
 		"City": "New York ",
 		"Cost": 331033.94,
@@ -63,6 +66,7 @@
 		"Revenue": 481499.18,
 		"Unit Price": 2268.02,
 		"Units Available": 22449,
-		"Units Sold": 69005
+		"Units Sold": 69005,
+		"Category":"Category2"
 	}]
 }

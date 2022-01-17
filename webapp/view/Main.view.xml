@@ -132,7 +132,7 @@
 							<viz.data:FlattenedDataset data="{chartModel>/Book}">
 								<viz.data:dimensions>
 									<viz.data:DimensionDefinition name="Item Category" value="{chartModel>Item Category}"/>
-									<viz.data:DimensionDefinition name="Item Category2" value="{chartModel>Item Category}"/>
+									<viz.data:DimensionDefinition name="Category" value="{chartModel>Category}"/>
 								</viz.data:dimensions>
 								<viz.data:measures>
 									<viz.data:MeasureDefinition name="Cost" value="{chartModel>Cost}"/>
@@ -141,7 +141,7 @@
 						</viz:dataset>
 						<viz:feeds>
 							<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Cost"/>
-							<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Item Category,Item Category2"/>
+							<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Category,Item Category"/>
 						</viz:feeds>
 					</viz:VizFrame>
 				</content>
